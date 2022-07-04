@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Check Controller</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body  ng-app="abc">
+<script type="text/javascript">
+    angular.module("abc", [])
+        .controller("ContactController", function ($scope)
+        {
+        console.log("1...");
+        $scope.contacts = ["abc@gmail.com", "qrs@gmail.com"];
+
+        $scope.add = function() {
+            $scope.contacts.push($scope.newcontact);
+            $scope.newcontact = "";
+        }
+    });
+</script>
+<div ng-controller="ContactController">
+    Email:<input type="text" ng-model="newcontact"/>
+    <button ng-click="add()">Add</button>
+    <h2>Contacts</h2>
+
+    <ul>
+        <li ng-repeat="contact in contacts"> {{ contact }} </li>
+    </ul>
+
+</div>
+
+</body>
+</html>

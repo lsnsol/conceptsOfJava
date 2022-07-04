@@ -1,0 +1,28 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="AngularCtrl">
+    <table>
+        <tr ng-repeat="x in topics">
+            <td>{{ x.Name }}</td>
+            <td>{{ x.Description }}</td>
+        </tr>
+    </table>
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('AngularCtrl', function($scope, $http) {
+        //note: specify webservice url here
+        $http.get("abc.txt")
+            .then(function(response)
+            {
+                $scope.topics = response.data;
+                console.log($scope.topics);
+            });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <button ng-mouseover="myFunc()">Click Me!</button>
+
+    <div ng-show="showMe">
+        <h1>Menu:</h1>
+        <div>check</div>
+        <div>working</div>
+        <div>not working</div>
+    </div>
+
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.showMe = false; //initially will be made false
+        $scope.myFunc = function() { //whenever myFunc() is called, display of above div is toggled
+            $scope.showMe = !$scope.showMe;
+        }
+    });
+</script>
+
+<p>Move Mouse over the button to show/hide the menu.</p>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+<body>
+<h1>Sample Application</h1>
+<div ng-app="" ng-init="students=[{name:'Naresh',marks:'52'},
+{name:'Krishna',marks:'64'},
+{name:'Satish',marks:'81'}]">
+
+    <p>List of Students are:</p>
+    <ol>
+        
+        <li ng-repeat="student in students">
+            {{ 'Name: ' + student.name + ', Marks: ' + student.marks }}
+        </li>
+    </ol>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</body>
+</html>

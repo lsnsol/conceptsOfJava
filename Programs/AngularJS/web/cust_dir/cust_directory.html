@@ -1,0 +1,28 @@
+<html ng-app="myapp">
+<body>
+
+<div ng-controller="productController">
+    <product-Header />
+    <product-Header />
+</div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+
+<script>
+    angular.module('myapp', [])
+        .controller('productController', ['$scope', function($scope) {
+            $scope.product = {
+                name: 'Super cool cam',
+                type: 'x-sup-c'
+            };
+        }])
+        .directive('productHeader', function() {
+            return {
+                restrict: 'E',
+                template: '<p>Product: {{product.name}}</p><p>Type: {{product.type}}</p>'
+            };
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body ng-app="mainModule">
+  <div ng-controller="mainController">
+    <h3>1. Template</h3>
+    <div ngh-template-dir> <!-- ngh-template-dir is custom directive -->
+      <strong>This content will be replaced</strong>
+      <div>
+        This one will be replaced too
+      </div>
+    </div>
+    <br />
+    <h3>2. TemplateUrl</h3>
+    <div ngh-template-url-dir> <!-- ngh-template-url-dir is custom directive -->
+      <strong>This content will be replaced</strong>
+      <div>
+        This one will be replaced too
+      </div>
+    </div>
+  </div>
+</body>
+</html>
